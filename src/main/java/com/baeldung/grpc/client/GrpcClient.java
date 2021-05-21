@@ -7,7 +7,8 @@ import org.baeldung.grpc.HelloResponse;
 import org.baeldung.grpc.HelloServiceGrpc;
 
 public class GrpcClient {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
+
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
                 .usePlaintext()
                 .build();

@@ -13,11 +13,10 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
             HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
         System.out.println("Request received from client:\n" + request);
 
-        String greeting = new StringBuilder().append("Hello, ")
-                .append(request.getFirstName())
-                .append(" ")
-                .append(request.getLastName())
-                .toString();
+        String greeting = "Hello, " +
+                request.getFirstName() +
+                " " +
+                request.getLastName();
 
         HelloResponse response = HelloResponse.newBuilder()
                 .setGreeting(greeting)
